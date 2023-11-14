@@ -1,0 +1,27 @@
+<div class="container row justify-content-center">
+
+<div class="form"><h2>My tasks:</h2></div>
+
+<% @tasks.each do |task| %>
+<div class="form">
+  <p>Title: <%= task.title %></p>
+  <ul>
+
+  <li><%= link_to "Show task", task_path(task.id) %></li>
+  <li><%= link_to "Edit task",  edit_task_path(task.id) %></li>
+  <li><%= link_to "Delete", task_path(task.id),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+
+  %></li>
+  <li> <input class="form-check-input" type="checkbox" <%= "checked" if task.completed %> value="" id="check"></li></div>
+
+
+</ul>
+
+
+<% end %>
+<div class="form">
+<h2>Create new tasks:</h2>
+    <%= link_to "Create a new task", new_task_path %>
+    </div>
+ </div>

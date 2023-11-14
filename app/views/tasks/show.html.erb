@@ -1,0 +1,16 @@
+<div class="container">
+
+<div class="form">
+<h2>My tasks:</h2>
+</div>
+
+<div class="form">
+<p>Title: <%= @task.title %></p>
+<p>Details: <%= @task.details %></p>
+<p>Completed: <%= @task.completed %></p>
+
+<h3>Return to index:</h3>
+<%= link_to "Index", root_path %>
+</div>
+
+</div>
